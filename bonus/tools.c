@@ -67,8 +67,6 @@ char	*ft_strtrim(char *s1, char *set)
 	new_str = ft_substr(s1, start, end - start);
 	if (!new_str)
 		return (NULL);
-	free(s1);
-	s1 = NULL;
 	return (new_str);
 }
 
