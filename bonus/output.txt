@@ -1,0 +1,13 @@
+total wtf 
+drwxr-xr-x wtf \'hel-bouk
+drwxr-xr-x wtf 'hel-bouk
+drwxr-xr-x wtf hel-bouk
+-rwxr-xr-x wtf hel-bouk
+-rw-r--r-- wtf hel-bouk
+-rw-r--r-- wtf hel-bouk
+-rw-r--r-- wtf hel-bouk
+-rw-r--r-- wtf hel-bouk
+-rw------- wtf hel-bouk
+-rw-r--r-- wtf hel-bou'k
+-rw-r--r-- wtf hel-bouk
+-rw-r--r-- wtf hel-bouk
