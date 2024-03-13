@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:42:39 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/13 12:29:18 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:19:56 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,9 @@ void free_cmd_list(t_cmd **cmds)
 
     while (*cmds)
     {
-        tmp = *cmds;
-        *cmds = (*cmds)->next;
-        if (tmp->str)
-			free_arrays(tmp->str);
-        free(tmp);
+        tmp = (*cmds)->next;
+        free_arrays((*cmds)->str);
+		free(*cmds);
+        *cmds = tmp;
     }
 }

@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 22:51:17 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/13 15:24:31 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:30:38 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,34 +64,34 @@ void	execut_(t_cmd **cmds, int fd_in, int fd_out)
 	int		fd[2];
 	char	*path;
 	int		id;
-
-	while (cmds)
+	t_cmd *cmd = *cmds;
+	while (cmd)
 	{
 		pipe(fd);
 		id = fork();
 		if (id == 0)
 		{
 			dup2(fd_in, 0);
-			if ((*cmds)->next)
+			if (cmd->next)
 				change_fd_ouput(fd[1], fd[0]);
 			else
 				change_fd_ouput(fd_out, fd[1]);
 			close(fd[0]);
-			path = get_environ((*cmds)->str[0]);
-			execve(path, (*cmds)->str, environ);
+			path = get_environ(cmd->str[0]);
+			execve(path, cmd->str, environ);
 		}
 		else 
 		{
-			if (!(*cmds)->next)
+			if (!cmd->next)
 			{
 				free_cmd_list(cmds);
-				// system("leaks pipex");
+				system("leaks pipex");
 				exit(0);
 			}
 			wait(NULL);
 			close(fd[1]);
 			fd_in = fd[0];
-			(*cmds) = (*cmds)->next;
+			cmd = cmd->next;
 		}
 	}
 }
