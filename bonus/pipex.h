@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:35:18 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/13 12:30:54 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:26:37 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_list
 }					t_list;
 
 extern char		**environ;
-char	*ft_strnstr(const char *haystack, const char *needle);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_strlen(const char *s);

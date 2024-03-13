@@ -6,24 +6,25 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:30:23 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/12 17:36:05 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:24:20 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	i;
-	int	needle_len;
+	size_t	i;
+	size_t	needle_len;
 
 	i = 0;
 	if (needle[i] == '\0')
 		return ((char *)haystack);
 	needle_len = ft_strlen(needle);
-	while (haystack[i])
+	while (haystack[i] && len > i)
 	{
-		if (ft_strncmp(haystack + i, needle, needle_len) == 0)
+		if (ft_strncmp(haystack + i, needle, needle_len) == 0
+			&& len >= (i + needle_len))
 			return ((char *)(haystack + i));
 		i++;
 	}

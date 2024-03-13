@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 22:51:17 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/13 13:57:06 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:24:31 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*get_environ(char *cmd)
 	cmd = ft_strjoin("/", cmd);
 	while (environ[i])
 	{
-		full_path = ft_strnstr(environ[i], "PATH");
+		full_path = ft_strnstr(environ[i], "PATH", 5);
 		if (full_path)
 			break ;
 		i++;
