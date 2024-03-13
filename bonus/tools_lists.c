@@ -16,17 +16,14 @@ void	creat_list(char *cmd, t_cmd **head)
 {
 	t_cmd	*cmds;
 	t_cmd	*ptr;
-	t_list *head_split = NULL;
 
 	if (!cmd || !head)
 		return ;
 	cmds = malloc(sizeof(t_cmd));
 	if (!cmds)
 		return ;
-	head_split = smart_split(cmd);
-	cmds->str = built2d_array(cmd, head_split);
+	cmds->str = smart_split(cmd);
 	cmds->next = NULL;
-	free_list(&head_split);
 	if (!*head)
 	{
 		*head = cmds;

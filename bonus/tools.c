@@ -12,14 +12,13 @@
 
 #include "pipex.h"
 
-char	**built2d_array(char *str, t_list *cmd)
+char	**built2d_array(t_list *cmd)
 {
 	char	**new_str;
 	int		i;
 	int		count_word;
 
 	i = 0;
-	cmd = smart_split(str);
 	if (!cmd)
 		return (NULL);
 	count_word = ft_lstsize(cmd);
@@ -31,7 +30,7 @@ char	**built2d_array(char *str, t_list *cmd)
 		if (cmd->new_str[0] == '\'')
 			new_str[i++] = ft_strtrim(cmd->new_str, "'");
 		else
-			new_str[i++] = cmd->new_str;
+			new_str[i++] = strdup(cmd->new_str);
 		cmd = cmd->next;
 	}
 	new_str[i] = NULL;
@@ -80,10 +79,11 @@ int	is_space(char c)
 	return (0);
 }
 
-t_list	*smart_split(char *str)
+char **smart_split(char *str)
 {
 	int		i;
 	int		st;
+	char **new_str;
 	t_list	*h;
 
 	i = 0;
@@ -106,7 +106,9 @@ t_list	*smart_split(char *str)
 		while (str[i] && is_space(str[i]))
 			i++;
 	}
-	return (h);
+	new_str = built2d_array(h);
+	free_list(&h);
+	return (new_str);
 }
 
 void	*free_list(t_list **head)

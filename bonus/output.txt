@@ -1,13 +1,12 @@
-total wtf 
-drwxr-xr-x wtf \'hel-bouk
-drwxr-xr-x wtf 'hel-bouk
-drwxr-xr-x wtf hel-bouk
--rwxr-xr-x wtf hel-bouk
--rw-r--r-- wtf hel-bouk
--rw-r--r-- wtf hel-bouk
--rw-r--r-- wtf hel-bouk
--rw-r--r-- wtf hel-bouk
--rw------- wtf hel-bouk
--rw-r--r-- wtf hel-bou'k
--rw-r--r-- wtf hel-bouk
--rw-r--r-- wtf hel-bouk
+12
+xr-xr-x  12 \'hel-bouk  candidates    408 Mar  7 20:52 .
+drwxr-xr-x  13 'hel-bouk  candidates    442 Mar  6 11:34 ..
+drwxr-xr-x   3 hel-bouk  candidates    102 Mar  6 12:33 .vscode
+-rwxr-xr-x   1 hel-bouk  candidates  18100 Mar  7 20:52 a.out
+-rw-r--r--   1 hel-bouk  candidates   1362 Mar  6 19:35 ft_split.c
+-rw-r--r--   1 hel-bouk  candidates   1507 Mar  7 14:35 get_environ.c
+-rw-r--r--   1 hel-bouk  candidates    514 Mar  7 11:39 input.txt
+-rw-r--r--   1 hel-bouk  candidates    598 Mar  7 14:45 main.c
+-rw-------   1 hel-bouk  candidates      9 Mar  7 20:52 output.txt
+-rw-r--r--   1 hel-bouk  candidates   1259 Mar  7 11:48 split_.c
+-rw-r--r--   1 hel-bouk  candidates   1609 Mar  7 10:13 tools_strings.c
