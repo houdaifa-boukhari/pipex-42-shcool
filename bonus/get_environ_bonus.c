@@ -24,7 +24,7 @@ char	*get_environ(char *cmd)
 	cmd = ft_strjoin("/", cmd);
 	while (environ[i])
 	{
-		full_path = ft_strnstr(environ[i], "PATH", 5);
+		full_path = ft_strnstr(environ[i], "PATH", 4);
 		if (full_path)
 			break ;
 		i++;

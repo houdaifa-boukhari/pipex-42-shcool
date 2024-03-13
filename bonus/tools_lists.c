@@ -100,21 +100,13 @@ int	first_found(char *str, char c, int idx)
 void free_cmd_list(t_cmd **cmds)
 {
     t_cmd *tmp;
-    int i;
 
     while (*cmds)
     {
         tmp = *cmds;
         *cmds = (*cmds)->next;
         if (tmp->str)
-        {
-            for (i = 0; tmp->str[i]; i++)
-            {
-                free(tmp->str[i]);
-            }
-            free(tmp->str);
-        }
-
+			free_arrays(tmp->str);
         free(tmp);
     }
 }
