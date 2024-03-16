@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.c                                            :+:      :+:    :+:   */
+/*   tools_string2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:32:32 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/13 12:10:26 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/14 14:25:05 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	**built2d_array(t_list *cmd)
 		if (cmd->new_str[0] == '\'')
 			new_str[i++] = ft_strtrim(cmd->new_str, "'");
 		else
-			new_str[i++] = strdup(cmd->new_str);
+			new_str[i++] = ft_strdup(cmd->new_str);
 		cmd = cmd->next;
 	}
 	new_str[i] = NULL;
@@ -70,18 +70,30 @@ char	*ft_strtrim(char *s1, char *set)
 	return (new_str);
 }
 
-int	is_space(char c)
-{
-	if (c == ' ' || c == '\t')
-		return (1);
-	return (0);
-}
+// char	*ft_strdup(const char *s1)
+// {
+// 	char	*dest;
+// 	int		i;
 
-char **smart_split(char *str)
+// 	i = ft_strlen((char *)s1) + 1;
+// 	dest = (char *)malloc(sizeof(char) * i);
+// 	if (!dest)
+// 		return (NULL);
+// 	i = 0;
+// 	while (s1[i])
+// 	{
+// 		dest[i] = s1[i];
+// 		i++;
+// 	}
+// 	dest[i] = '\0';
+// 	return (dest);
+// }
+
+char	**smart_split(char *str)
 {
 	int		i;
 	int		st;
-	char **new_str;
+	char	**new_str;
 	t_list	*h;
 
 	i = 0;
@@ -101,29 +113,7 @@ char **smart_split(char *str)
 				i++;
 			ft_lstadd_back(&h, ft_lstnew(ft_substr(str, st, i - st)));
 		}
-		while (str[i] && is_space(str[i]))
-			i++;
+		i = skip_space(str, i);
 	}
-	new_str = built2d_array(h);
-	free_list(&h);
-	return (new_str);
-}
-
-void	*free_list(t_list **head)
-{
-	t_list	*ptr;
-
-	ptr = *head;
-	if (!head)
-		return (NULL);
-	while (*head)
-	{
-		ptr = (*head)->next;
-		free((*head)->new_str);
-		(*head)->new_str = NULL;
-		free(*head);
-		*head = ptr;
-	}
-	*head = NULL;
-	return (NULL);
+	return (new_str = built2d_array(h), free_list(&h), new_str);
 }

@@ -1,0 +1,20 @@
+total 136$
+-rw-r--r--  1 hel-bouk  candidates    343 Mar 16 20:10 Makefile$
+-rw-r--r--  1 hel-bouk  candidates   1493 Mar 13 20:19 free_tools.c$
+-rw-r--r--  1 hel-bouk  candidates   2793 Mar 16 20:07 get_environ.c$
+-rw-r--r--  1 hel-bouk  candidates    791 Mar 14 21:58 input.txt$
+-rw-r--r--  1 hel-bouk  candidates   1299 Mar 16 20:10 output.txt$
+-rwxr-xr-x  1 hel-bouk  candidates  22832 Mar 16 20:11 pipex$
+-rw-r--r--  1 hel-bouk  candidates   1650 Mar 16 20:03 pipex.c$
+-rw-r--r--  1 hel-bouk  candidates   2314 Mar 16 20:09 pipex.h$
+-rw-r--r--  1 hel-bouk  candidates   2073 Mar 13 17:13 split_.c$
+-rw-r--r--  1 hel-bouk  candidates   2097 Mar 13 20:08 tools_lists.c$
+-rw-r--r--  1 hel-bouk  candidates   2678 Mar 16 20:08 tools_string2.c$
+-rw-r--r--  1 hel-bouk  candidates   2550 Mar 13 17:13 tools_strings.c$
+ 1 hel-bouk  candidates   2044 Mar 16 20:10 split_.o$
+-rw-r--r--  1 hel-bouk  candidates   2097 Mar 13 20:08 tools_lists.c$
+-rw-r--r--  1 hel-bouk  candidates   1924 Mar 16 20:10 tools_lists.o$
+-rw-r--r--  1 hel-bouk  candidates   2678 Mar 16 20:08 tools_string2.c$
+-rw-r--r--  1 hel-bouk  candidates   2816 Mar 16 20:10 tools_string2.o$
+-rw-r--r--  1 hel-bouk  candidates   2550 Mar 13 17:13 tools_strings.c$
+-rw-r--r--  1 hel-bouk  candidates   2380 Mar 16 20:10 tools_strings.o$

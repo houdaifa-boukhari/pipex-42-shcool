@@ -1,6 +1,6 @@
-NAME = pipex_bonus
-SRC = pipex_bonus.c split_.c free_tools.c tools_string2.c tools_strings.c get_environ_bonus.c \
-	tools_lists.c ../get_next_line/get_next_line.c ../get_next_line/get_next_line_utils.c her_doc.c
+NAME = pipex
+SRC = pipex.c split_.c free_tools.c tools_string2.c tools_strings.c get_environ.c \
+	tools_lists.c
 HEADER = pipex.h
 OBJS = $(SRC:.c=.o)
 CC = cc

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_environ_bonus.c                                :+:      :+:    :+:   */
+/*   get_environ.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 22:51:17 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/16 16:26:29 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/16 20:07:54 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,13 +108,10 @@ void	wait_children(int *pids, int size)
 
 void	execut_(t_cmd *cmds, char **envp, t_fd fd)
 {
-	int		*pids;
+	int		pids[2];
 	int		i;
 
 	i = 0;
-	pids = (int *)malloc(sizeof(int) * (ft_lstsize1(cmds)));
-	if (!pids)
-		return ;
 	while (cmds)
 	{
 		pipe(fd.fd_p);

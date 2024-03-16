@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:35:18 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/16 16:02:20 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/16 20:09:41 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <stdlib.h>
 # include <string.h>
 # include <errno.h>
-# include "../get_next_line/get_next_line.h"
 
 typedef struct s_cmd
 {
@@ -66,7 +65,6 @@ void	*free_list(t_list **head);
 void	free_cmd_list(t_cmd **cmds);
 int		skip_space(char *str, int i);
 int		is_space(char c);
-void	managing_heredoc(char *delim);
-int		ft_lstsize1(t_cmd *lst);
+char	*ft_strdup(const char *s1);
 
 #endif
