@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 22:28:50 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/16 20:03:12 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/22 01:31:05 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	open_file(char *name, char c)
 	if (c == 'i')
 		fd = open(name, O_RDWR);
 	else
-		fd = open(name, O_CREAT | O_RDWR, 0777);
+		fd = open(name, O_CREAT | O_TRUNC | O_RDWR, 0777);
 	if (fd < 0)
 	{
 		perror(name);
@@ -55,6 +55,6 @@ int	main(int argc, char **argv, char **envp)
 	else
 	{
 		write(STDOUT_FILENO, "use ./pipex infile cmd1 cmd2 outfile\n", 38);
-		exit(127);
+		exit(EXIT_FAILURE);
 	}
 }

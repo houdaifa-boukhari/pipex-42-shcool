@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   her_doc.c                                          :+:      :+:    :+:   */
+/*   her_doc_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 12:45:00 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/16 13:26:12 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/03/19 00:50:06 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/03/22 01:41:52 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 void	managing_heredoc(char *delim)
 {
@@ -18,7 +18,7 @@ void	managing_heredoc(char *delim)
 	int		tmp_fd;
 
 	delim = ft_strjoin(delim, "\n");
-	tmp_fd = open("/tmp/herdoc", O_CREAT | O_RDWR, 0777);
+	tmp_fd = open("/tmp/herdoc", O_CREAT | O_TRUNC | O_RDWR, 0644);
 	if (tmp_fd < 0)
 	{
 		perror("open");
@@ -35,7 +35,7 @@ void	managing_heredoc(char *delim)
 	}
 	free(line);
 	close(tmp_fd);
-	tmp_fd = open("/tmp/herdoc", O_CREAT | O_RDWR, 0777);
+	tmp_fd = open_file("/tmp/herdoc", 'h');
 	dup2(tmp_fd, STDIN_FILENO);
 	close(tmp_fd);
 	free(delim);

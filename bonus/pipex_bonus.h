@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 11:35:18 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/16 16:02:20 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/03/19 00:49:39 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/03/19 00:49:42 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef PIPEX_BONUS_H
+# define PIPEX_BONUS_H
 
 # include <unistd.h>
 # include <stdio.h>
@@ -47,6 +47,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_strlen(const char *s);
+int		open_file(char *name, char c);
 char	*get_environ(char *cmd, char **envp);
 char	**split_(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);

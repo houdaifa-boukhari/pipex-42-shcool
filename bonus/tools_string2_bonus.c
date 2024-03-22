@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools_string2.c                                    :+:      :+:    :+:   */
+/*   tools_string2_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:32:32 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/14 14:25:05 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:32:41 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 char	**built2d_array(t_list *cmd)
 {
@@ -69,25 +69,6 @@ char	*ft_strtrim(char *s1, char *set)
 		return (NULL);
 	return (new_str);
 }
-
-// char	*ft_strdup(const char *s1)
-// {
-// 	char	*dest;
-// 	int		i;
-
-// 	i = ft_strlen((char *)s1) + 1;
-// 	dest = (char *)malloc(sizeof(char) * i);
-// 	if (!dest)
-// 		return (NULL);
-// 	i = 0;
-// 	while (s1[i])
-// 	{
-// 		dest[i] = s1[i];
-// 		i++;
-// 	}
-// 	dest[i] = '\0';
-// 	return (dest);
-// }
 
 char	**smart_split(char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:35:18 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/16 20:09:41 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/21 01:00:19 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <sys/wait.h>
-# include <sys/types.h>
 # include <stdlib.h>
 # include <string.h>
-# include <errno.h>
 
 typedef struct s_cmd
 {

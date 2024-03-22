@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 22:51:17 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/16 16:26:29 by hel-bouk         ###   ########.fr       */
+/*   Created: 2024/03/19 00:50:17 by hel-bouk          #+#    #+#             */
+/*   Updated: 2024/03/22 01:41:19 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 char	*get_environ(char *cmd, char **envp)
 {

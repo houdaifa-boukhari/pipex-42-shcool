@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 22:51:17 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/16 20:07:54 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/17 15:30:04 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ void	wait_children(int *pids, int size)
 			exit(status);
 		i++;
 	}
-	free(pids);
 	unlink("/tmp/herdoc");
 }
 

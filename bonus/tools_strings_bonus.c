@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools_strings.c                                    :+:      :+:    :+:   */
+/*   tools_strings_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:30:23 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/13 15:24:20 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/19 00:49:02 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
