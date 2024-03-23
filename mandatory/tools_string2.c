@@ -55,10 +55,8 @@ char	*ft_strtrim(char *s1, char *set)
 	char	*new_str;
 
 	start = 0;
-	if (!s1)
+	if (!s1 || !s2)
 		return (NULL);
-	else if (!set && s1)
-		return ((char *)s1);
 	end = ft_strlen(s1);
 	if (s1[start] && check(s1[start], (char *)set))
 		start++;
@@ -75,6 +73,8 @@ char	*ft_strdup(const char *s1)
 	char	*dest;
 	int		i;
 
+	if (!s1)
+		return (NULL);
 	i = ft_strlen((char *)s1) + 1;
 	dest = (char *)malloc(sizeof(char) * i);
 	if (!dest)

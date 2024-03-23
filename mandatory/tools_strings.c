@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	needle_len;
 
 	i = 0;
+	if (!haystack)
+		return (NULL);
 	if (needle[i] == '\0')
 		return ((char *)haystack);
 	needle_len = ft_strlen(needle);
@@ -36,6 +38,8 @@ int	ft_strlen(const char *s)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 		i++;
 	return (i);
@@ -75,6 +79,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
+	if (!s1 || !s2)
+		return (-1);
 	while (s1[i] && s2[i] && n > i + 1)
 	{
 		if (s1[i] != s2[i])
