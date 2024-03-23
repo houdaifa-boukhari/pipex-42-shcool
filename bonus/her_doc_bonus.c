@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 00:50:06 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/22 01:41:52 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/23 00:22:57 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	managing_heredoc(char *delim)
 	}
 	while (1)
 	{
-		write(STDOUT_FILENO, "heredoc> ", 10);
+		write(STDOUT_FILENO, "pipe heredoc> ", 15);
 		line = get_next_line(STDIN_FILENO);
 		if (ft_strncmp(line, delim, ft_strlen(line)) == 0)
 			break ;

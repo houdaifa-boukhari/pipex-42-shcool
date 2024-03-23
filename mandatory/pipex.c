@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 22:28:50 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/22 01:31:05 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/23 00:01:36 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,20 @@ int	open_file(char *name, char c)
 	int	fd;
 
 	if (c == 'i')
+	{
 		fd = open(name, O_RDWR);
+		if (fd < 0)
+		{
+			perror(name);
+			exit(0);
+		}
+	}
 	else
 		fd = open(name, O_CREAT | O_TRUNC | O_RDWR, 0777);
 	if (fd < 0)
 	{
 		perror(name);
-		exit(EXIT_FAILURE);
+		exit(0);
 	}
 	return (fd);
 }

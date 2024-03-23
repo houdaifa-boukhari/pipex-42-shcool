@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 00:50:17 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/22 01:41:19 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/23 00:01:55 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ char	*get_environ(char *cmd, char **envp)
 	char	*full_path;
 
 	i = 0;
-	if (access(cmd, X_OK) == 0)
+	if (strncmp(cmd , "./", 2) == 0 && access(cmd, X_OK) == 0)
+		return (cmd);
+	else if (strncmp(cmd , "/", 1) == 0 && access(cmd, X_OK) == 0)
 		return (cmd);
 	cmd = ft_strjoin("/", cmd);
 	while (envp[i])
@@ -77,9 +79,9 @@ void	execute_child(t_cmd *cmd, char **envp, t_fd fd)
 		perror(cmd->str[0]);
 		exit(127);
 	}
-	if (execve(path, cmd->str, envp))
+	if (execve(path, cmd->str, envp) == -1)
 	{
-		perror("executing failed");
+		perror("failed execution");
 		exit(EXIT_FAILURE);
 	}
 }
