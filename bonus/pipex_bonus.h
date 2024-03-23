@@ -17,10 +17,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <sys/wait.h>
-# include <sys/types.h>
 # include <stdlib.h>
-# include <string.h>
-# include <errno.h>
 # include "../get_next_line/get_next_line.h"
 
 typedef struct s_cmd

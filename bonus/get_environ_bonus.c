@@ -19,9 +19,9 @@ char	*get_environ(char *cmd, char **envp)
 	char	*full_path;
 
 	i = 0;
-	if ((strncmp(cmd, "./", 2) == 0) && (access(cmd, X_OK) == 0))
+	if ((ft_strncmp(cmd, "./", 2) == 0) && (access(cmd, X_OK) == 0))
 		return (cmd);
-	else if ((strncmp(cmd, "/", 1) == 0) && (access(cmd, X_OK) == 0))
+	else if ((ft_strncmp(cmd, "/", 1) == 0) && (access(cmd, X_OK) == 0))
 		return (cmd);
 	cmd = ft_strjoin("/", cmd);
 	while (envp[i])
