@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 00:50:06 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/23 00:22:57 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/24 01:00:41 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,9 @@ void	managing_heredoc(char *delim)
 	int		tmp_fd;
 
 	delim = ft_strjoin(delim, "\n");
-	tmp_fd = open("/tmp/herdoc", O_CREAT | O_TRUNC | O_RDWR, 0644);
-	if (tmp_fd < 0)
-	{
-		perror("open");
-		exit(EXIT_FAILURE);
-	}
+	if (access("/tmp/herdoc", F_OK) == 0)
+		unlink("/tmp/herdoc");
+	tmp_fd = open_file("/tmp/herdoc", 'o');
 	while (1)
 	{
 		write(STDOUT_FILENO, "pipe heredoc> ", 15);
@@ -36,7 +33,8 @@ void	managing_heredoc(char *delim)
 	free(line);
 	close(tmp_fd);
 	tmp_fd = open_file("/tmp/herdoc", 'h');
-	dup2(tmp_fd, STDIN_FILENO);
+	if (dup2(tmp_fd, STDIN_FILENO) == -1)
+		perror("dup2 failed");
 	close(tmp_fd);
 	free(delim);
 }
@@ -55,3 +53,4 @@ int	ft_lstsize1(t_cmd *lst)
 	}
 	return (count);
 }
+

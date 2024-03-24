@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:32:32 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/16 20:08:32 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/23 23:02:13 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strtrim(char *s1, char *set)
 	char	*new_str;
 
 	start = 0;
-	if (!s1 || !s2)
+	if (!s1 || !set)
 		return (NULL);
 	end = ft_strlen(s1);
 	if (s1[start] && check(s1[start], (char *)set))

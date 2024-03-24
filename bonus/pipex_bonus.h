@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 00:49:39 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/19 00:49:42 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/24 01:00:46 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ int		skip_space(char *str, int i);
 int		is_space(char c);
 void	managing_heredoc(char *delim);
 int		ft_lstsize1(t_cmd *lst);
+int		open_file(char *name, char c);
 
 #endif

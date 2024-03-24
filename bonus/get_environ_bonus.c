@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 00:50:17 by hel-bouk          #+#    #+#             */
-/*   Updated: 2024/03/23 00:01:55 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2024/03/24 00:07:04 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*get_environ(char *cmd, char **envp)
 			break ;
 		i++;
 	}
+	if (!full_path)
+		return (NULL);
 	full_path = ft_substr(full_path, 5, ft_strlen(full_path + 5));
 	dir = split_(full_path, ':');
 	free(full_path);
@@ -67,7 +69,10 @@ void	execute_child(t_cmd *cmd, char **envp, t_fd fd)
 
 	path = NULL;
 	if (fd.fd_in != 0)
-		dup2(fd.fd_in, 0);
+	{
+		if (dup2(fd.fd_in, 0) == -1)
+			perror("dup2 failed");
+	}
 	if (cmd->next)
 		change_fd_ouput(fd.fd_p[1], fd.fd_p[0]);
 	else
@@ -76,7 +81,8 @@ void	execute_child(t_cmd *cmd, char **envp, t_fd fd)
 	path = get_environ(cmd->str[0], envp);
 	if (!path)
 	{
-		perror(cmd->str[0]);
+		write(2, cmd->str[0], ft_strlen(cmd->str[0]));
+		write(2, " :command not found\n", 21);
 		exit(127);
 	}
 	if (execve(path, cmd->str, envp) == -1)
