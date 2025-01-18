@@ -1,0 +1,1 @@
+pipex is a project from the 1337 School Common Core curriculum that involves reproducing the behavior of the Unix shell's pipe (|) functionality. It enhances understanding of process creation, inter-process communication (IPC), and file descriptor management in C.
